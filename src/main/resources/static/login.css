@@ -1,0 +1,119 @@
+/* 
+    Fundo da página
+*/
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(135deg, #687eb3, #255ab6);
+    font-family: "Poppins", sans-serif;
+}
+
+/* 
+    Caixa central do login
+*/
+.login-container {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 30px;
+    width: 320px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+
+.logo-area {
+
+    margin-bottom: 20px;
+}
+
+.login-logo {
+    width: 200px;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+
+
+/*
+    Campos de input (usuário e senha)
+*/
+
+.login-form label {
+    display: block;
+    text-align: left;
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #c9cedd;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+}
+
+/* 
+    Botões de ação (Entrar e Sair)
+*/
+.btn-login,
+.btn-exit {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+/* Botão Entrar */
+.btn-login {
+    background-color: #163a8c;
+    color: white;
+}
+
+.btn-login:hover {
+    background-color: #3b77df;
+}
+
+/* Botão Sair */
+.btn-exit {
+    background-color: #c9cedd;
+}
+
+.btn-exit:hover {
+    background-color: #798091;
+}
+
+/* 
+    Link "Esqueci minha senha"
+*/
+.forgot-password {
+    display: block;
+    margin-top: 15px;
+    font-size: 13px;
+    color: #163a8c;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* 
+    Rodapé
+*/
+.footer {
+    margin-top: 25px;
+    font-size: 12px;
+    color: #333;
+}

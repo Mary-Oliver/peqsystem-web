@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>PeqSystem — Relatórios</title>
+
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="usuarios.css" /> 
+    </head>
+
+  <body>
+    <div class="container">
+
+      <aside class="sidebar" id="sidebar"> 
+        <div class="logo">
+          <img src="imagens/Logo-claro.png" alt="PeqSystem" class="logo-img" />
+        </div>
+
+        <nav>
+          <div class="sidebar-toggle" id="sidebar-toggle">
+            <i class="fa-solid fa-angles-left"></i>
+            <span>Recolher Menu</span>
+          </div>
+
+         <ul class="menu-list">
+    <li>
+        <a href="principal.html" class="menu-item">
+            <i class="fa-solid fa-house"></i><span>Início</span>
+        </a>
+    </li>
+    <li>
+        <a href="vendas.html" class="menu-item">
+            <i class="fa-solid fa-cart-shopping"></i><span>Vendas</span>
+        </a>
+    </li>
+    <li>
+        <a href="clientes.html" class="menu-item">
+            <i class="fa-solid fa-users"></i><span>Clientes</span>
+        </a>
+    </li>
+    <li>
+        <a href="produtos.html" class="menu-item">
+            <i class="fa-solid fa-box"></i><span>Produtos</span>
+        </a>
+    </li>
+    <li>
+        <a href="fornecedores.html" class="menu-item">
+            <i class="fa-solid fa-truck-field"></i><span>Fornecedores</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="relatorios.html" class="menu-item active"> 
+            <i class="fa-solid fa-chart-line"></i><span>Relatórios</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="usuarios.html" class="menu-item">
+            <i class="fa-solid fa-gears"></i><span>Configurações</span>
+        </a>
+    </li>
+    <li>
+        <a href="login.html" class="menu-item logout"> 
+            <i class="fa-solid fa-right-from-bracket"></i><span>Sair</span>
+        </a>
+    </li>
+</ul>
+
+        </nav>
+      </aside>
+      <main class="main-content">
+
+        <section class="filter-container">
+          <h1 class="main-content-h1">Relatórios</h1>
+          <p class="main-content-subtitle">Selecione o tipo e o período para gerar o relatório desejado.</p>
+
+          <form class="data-form report-form">
+            
+            <label for="reportType">Tipo de Relatório</label>
+            <select id="reportType" required>
+                <option value="" disabled selected>Selecione o tipo</option>
+                <option value="vendas">Vendas</option>
+                <option value="estoque">Estoque</option>
+                <option value="financeiro">Financeiro</option>
+            </select>
+
+            <label for="startDate">Período</label>
+            <div class="date-range-group">
+                <input type="date" id="startDate" required />
+                <span>a</span>
+                <input type="date" id="endDate" required />
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn-primary" id="generateReport">
+                <i class="fa-solid fa-file-export"></i> Gerar Relatório
+              </button>
+              <button type="button" class="btn-secondary" onclick="window.history.back()">
+                <i class="fa-solid fa-arrow-left"></i> Voltar
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <section class="report-display-area">
+            </section>
+
+        <footer>
+          <p>© 2025 PeqSystem. Todos os direitos reservados.</p>
+        </footer>
+      </main>
+      </div>
+    
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+  </body>
+</html>

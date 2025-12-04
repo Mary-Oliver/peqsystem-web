@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeqSystem - Gestão de Usuários</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <div class="container">
+
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">
+                <img src="imagens/Logo-claro.png" alt="PeqSystem" class="logo-img">
+            </div>
+            <nav>
+                <div class="sidebar-toggle" id="sidebar-toggle" onclick="toggleMenu()">
+                    <i class="fa-solid fa-angles-left"></i>
+                    <span>Recolher Menu</span>
+                </div>
+                
+                <ul class="menu-list">
+                    <li><a href="index.html" class="menu-item"><i class="fa-solid fa-house"></i><span>Início</span></a></li>
+                    <li><a href="vendas.html" class="menu-item"><i class="fa-solid fa-cart-shopping"></i><span>Vendas</span></a></li>
+                    <li><a href="clientes.html" class="menu-item"><i class="fa-solid fa-users"></i><span>Clientes</span></a></li>
+                    <li><a href="produto.html" class="menu-item"><i class="fa-solid fa-box"></i><span>Produtos</span></a></li>
+                    <li><a href="fornecedores.html" class="menu-item"><i class="fa-solid fa-truck-field"></i><span>Fornecedores</span></a></li>
+                    <li><a href="relatorios.html" class="menu-item"><i class="fa-solid fa-chart-line"></i><span>Relatórios</span></a></li>
+                    <li><a href="usuarios.html" class="menu-item active"><i class="fa-solid fa-gears"></i><span>Configurações</span></a></li>
+                    <li><a href="index.html" class="menu-item logout"><i class="fa-solid fa-right-from-bracket"></i><span>Sair</span></a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <h1>Gestão de Usuários</h1>
+            <p class="subtitle">Gerencie os usuários, suas funções e acessos ao sistema.</p>
+
+            <section class="list-container">
+                <div class="list-header">
+                    <h2>Usuários Cadastrados</h2>
+                    <button class="btn-new-user" onclick="focarFormulario()">
+                        <i class="fa-solid fa-plus"></i> Novo Usuário
+                    </button>
+                </div>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>E-mail</th>
+                            <th>Função</th>
+                            <th>Status</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mary Ferreira</td>
+                            <td>mary.ferreira@peq.com</td>
+                            <td>Administrador(a)</td>
+                            <td><span style="color: green; font-weight: bold;">Ativo</span></td>
+                            <td>
+                                <button class="btn-edit">Editar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>João Silva</td>
+                            <td>joao.silva@peq.com</td>
+                            <td>Vendedor(a)</td>
+                            <td><span style="color: green; font-weight: bold;">Ativo</span></td>
+                            <td>
+                                <button class="btn-edit">Editar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="user-form-section">
+                <h2 style="margin-top: 30px; margin-bottom: 15px; color: #0D2A6D;">Cadastro/Edição de Usuário</h2>
+                
+                <form class="user-form data-form" action="#" method="post">
+                    
+                    <div>
+                        <label for="nomeUsuario">Nome Completo</label>
+                        <input type="text" id="nomeUsuario" name="nome" placeholder="Digite o nome" required>
+                    </div>
+
+                    <div>
+                        <label for="emailUsuario">E-mail de Acesso</label>
+                        <input type="email" id="emailUsuario" name="email" placeholder="usuario@empresa.com" required>
+                    </div>
+
+                    <div>
+                        <label for="senhaUsuario">Senha</label>
+                        <input type="password" id="senhaUsuario" name="senha" placeholder="******">
+                    </div>
+                    
+                    <div>
+                        <label for="funcaoUsuario">Função</label>
+                        <select id="funcaoUsuario" name="papel">
+                            <option value="vendedor">Vendedor(a)</option>
+                            <option value="admin">Administrador(a)</option>
+                            <option value="gerente">Gerente</option>
+                        </select>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="reset" class="btn-secondary">Cancelar</button>
+                        <button type="submit" class="btn-primary">Salvar Usuário</button>
+                    </div>
+                </form>
+            </section>
+
+            <footer class="main-footer">
+                © 2025 PeqSystem. Todos os direitos reservados.
+            </footer>
+        </main>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('.container').classList.toggle('menu-closed');
+            document.querySelector('.sidebar').classList.toggle('menu-closed');
+        }
+
+        function focarFormulario() {
+            document.getElementById('nomeUsuario').focus();
+        }
+    </script>
+</body>
+</html>

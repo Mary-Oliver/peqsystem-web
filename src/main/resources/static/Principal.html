@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeqSystem - Início</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css"> 
+    
+    <style>
+     
+        .main-content {
+            display: flex !important;
+            flex-direction: column !important;
+            min-height: 100% !important;
+        }
+       
+        .main-footer {
+            margin-top: auto !important;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">
+                <img src="imagens/Logo-claro.png" alt="PeqSystem" class="logo-img">
+            </div>
+            <nav>
+                <div class="sidebar-toggle" id="sidebar-toggle" onclick="toggleMenu()">
+                    <i class="fa-solid fa-angles-left"></i>
+                    <span>Recolher Menu</span>
+                </div>
+                
+                <ul class="menu-list">
+                    <li><a href="index.html" class="menu-item active"><i class="fa-solid fa-house"></i><span>Início</span></a></li>
+                    <li><a href="vendas.html" class="menu-item"><i class="fa-solid fa-cart-shopping"></i><span>Vendas</span></a></li>
+                    <li><a href="clientes.html" class="menu-item"><i class="fa-solid fa-users"></i><span>Clientes</span></a></li>
+                    <li><a href="produto.html" class="menu-item"><i class="fa-solid fa-box"></i><span>Produtos</span></a></li>
+                    <li><a href="fornecedores.html" class="menu-item"><i class="fa-solid fa-truck-field"></i><span>Fornecedores</span></a></li>
+                    <li><a href="relatorios.html" class="menu-item"><i class="fa-solid fa-chart-line"></i><span>Relatórios</span></a></li>
+                    <li><a href="usuarios.html" class="menu-item"><i class="fa-solid fa-gears"></i><span>Configurações</span></a></li>
+                    <li><a href="login.html" class="menu-item logout"><i class="fa-solid fa-right-from-bracket"></i><span>Sair</span></a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            
+            <h1>Bem-vindo(a), Mary!</h1>
+            <p class="subtitle">Selecione uma opção no menu ao lado para começar.</p>
+
+            <div class="cards">
+                
+                <div class="card">
+                    <div class="card-header">
+                        <span>Produtos cadastrados</span>
+                        <button class="toggle-card" onclick="toggleCard(this)">
+                            <i class="fa-solid fa-minus"></i>
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <span class="count">0</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <span>Vendas do mês</span>
+                        <button class="toggle-card" onclick="toggleCard(this)">
+                            <i class="fa-solid fa-minus"></i>
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <span class="count">0</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <span>Clientes ativos</span>
+                        <button class="toggle-card" onclick="toggleCard(this)">
+                            <i class="fa-solid fa-minus"></i>
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <span class="count">0</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <section class="notifications">
+                <h3>Notificações</h3>
+                <p style="color: #666;">Sem alertas pendentes no momento.</p>
+            </section>
+
+            <footer class="main-footer">
+                © 2025 PeqSystem. Todos os direitos reservados.
+            </footer>
+
+        </main>
+    </div>
+
+    <script>
+      
+        function toggleMenu() {
+            document.querySelector('.container').classList.toggle('menu-closed');
+            document.querySelector('.sidebar').classList.toggle('menu-closed');
+        }
+
+       
+        function toggleCard(btn) {
+            const card = btn.closest('.card');
+            const cardBody = card.querySelector('.card-body');
+            const icon = btn.querySelector('i');
+
+            if (cardBody.style.display === 'none') {
+                cardBody.style.display = 'block';
+                icon.classList.remove('fa-plus');
+                icon.classList.add('fa-minus');
+            } else {
+                cardBody.style.display = 'none';
+                icon.classList.remove('fa-minus');
+                icon.classList.add('fa-plus');
+            }
+        }
+    </script>
+</body>
+</html>

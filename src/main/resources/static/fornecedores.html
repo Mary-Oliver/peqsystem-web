@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeqSystem - Gestão de Fornecedores</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <div class="container">
+
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">
+                <img src="imagens/Logo-claro.png" alt="PeqSystem" class="logo-img">
+            </div>
+            <nav>
+                <div class="sidebar-toggle" id="sidebar-toggle" onclick="toggleMenu()">
+                    <i class="fa-solid fa-angles-left"></i>
+                    <span>Recolher Menu</span>
+                </div>
+                
+                <ul class="menu-list">
+                    <li><a href="index.html" class="menu-item"><i class="fa-solid fa-house"></i><span>Início</span></a></li>
+                    <li><a href="vendas.html" class="menu-item"><i class="fa-solid fa-cart-shopping"></i><span>Vendas</span></a></li>
+                    <li><a href="clientes.html" class="menu-item"><i class="fa-solid fa-users"></i><span>Clientes</span></a></li>
+                    <li><a href="produto.html" class="menu-item"><i class="fa-solid fa-box"></i><span>Produtos</span></a></li>
+                    <li><a href="fornecedores.html" class="menu-item active"><i class="fa-solid fa-truck-field"></i><span>Fornecedores</span></a></li>
+                    <li><a href="relatorios.html" class="menu-item"><i class="fa-solid fa-chart-line"></i><span>Relatórios</span></a></li>
+                    <li><a href="usuarios.html" class="menu-item"><i class="fa-solid fa-gears"></i><span>Configurações</span></a></li>
+                    <li><a href="login.html" class="menu-item logout"><i class="fa-solid fa-right-from-bracket"></i><span>Sair</span></a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <h1>Gestão de Fornecedores</h1>
+            <p class="subtitle">Cadastre e gerencie seus parceiros comerciais.</p>
+
+            <section class="supplier-form-section">
+                <h2 style="color: #0D2A6D; margin-bottom: 15px;">Cadastro de Fornecedor</h2>
+                
+                <form class="supplier-form data-form" action="/cadastrar-fornecedor" method="post"> 
+                    
+                    <div>
+                        <label for="nomeFornecedor">Nome da Empresa</label>
+                        <input type="text" id="nomeFornecedor" name="nome" placeholder="Nome completo ou Razão Social" required>
+                    </div>
+                    <div>
+                        <label for="cnpj">CNPJ</label>
+                        <input type="text" id="cnpj" name="cnpj" placeholder="00.000.000/0000-00">
+                    </div>
+
+                    <div>
+                        <label for="telefoneFornecedor">Telefone de Contato</label>
+                        <input type="tel" id="telefoneFornecedor" name="contato" placeholder="(XX) XXXXX-XXXX" required>
+                    </div>
+                    <div>
+                        <label for="emailFornecedor">E-mail</label>
+                        <input type="email" id="emailFornecedor" name="emailFornecedor" placeholder="contato@empresa.com">
+                    </div>
+                    
+                    <div class="full-width-field">
+                        <label for="endereco">Endereço</label>
+                        <input type="text" id="endereco" name="endereco" placeholder="Rua, Número, Bairro, Cidade - UF">
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="reset" class="btn-secondary">Limpar</button>
+                        <button type="submit" class="btn-primary">Salvar Fornecedor</button>
+                    </div>
+                </form>
+            </section>
+            
+            <hr style="border: 0; border-top: 1px solid #ddd; margin: 30px 0;">
+
+            <section class="nota-entrada-section">
+                <h2 style="color: #666; margin-bottom: 15px;">Entrada de Notas (Em breve)</h2>
+                <form class="nota-entrada-form data-form" action="#" method="post" style="opacity: 0.7;">
+                    <div>
+                        <label for="numeroNf">Número NF</label>
+                        <input type="text" id="numeroNf" name="numeroNf" placeholder="000.000" disabled>
+                    </div>
+                    <div>
+                        <label for="dataNf">Data Emissão</label>
+                        <input type="date" id="dataNf" name="dataNf" disabled>
+                    </div>
+                </form>
+            </section>
+
+            <section class="supplier-list list-container">
+                <h2>Fornecedores Cadastrados</h2>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Contato</th>
+                            <th>Endereço</th>
+                            <th style="text-align: center;">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Exemplo Distribuidora</td>
+                            <td>(11) 9999-9999</td>
+                            <td>Rua Exemplo, 123</td>
+                            <td style="text-align: center;">
+                                <button class="btn-edit">Editar</button>
+                                <button class="btn-delete">Excluir</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+            <footer class="main-footer">
+                © 2025 PeqSystem. Todos os direitos reservados.
+            </footer>
+        </main>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('.container').classList.toggle('menu-closed');
+            document.querySelector('.sidebar').classList.toggle('menu-closed');
+        }
+    </script>
+</body>
+</html>

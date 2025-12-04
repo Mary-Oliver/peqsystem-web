@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PeqSystem - Cadastro de Produtos</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <aside class="sidebar">
+        <div class="logo">
+          <img src="imagens/Logo-claro.png" alt="PeqSystem" class="logo-img" />
+        </div>
+        <nav>
+          <ul class="menu-list">
+            <li>
+              <a href="principal.html" class="menu-item">
+                <i class="fa-solid fa-house"></i><span>Início</span>
+              </a>
+            </li>
+            <li>
+              <a href="vendas.html" class="menu-item">
+                <i class="fa-solid fa-cart-shopping"></i><span>Vendas</span>
+              </a>
+            </li>
+            <li>
+              <a href="clientes.html" class="menu-item">
+                <i class="fa-solid fa-users"></i><span>Clientes</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="produto.html" class="menu-item active">
+                <i class="fa-solid fa-box"></i><span>Produtos</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="fornecedores.html" class="menu-item">
+                <i class="fa-solid fa-truck"></i><span>Fornecedores</span>
+              </a>
+            </li>
+            <li>
+              <a href="relatorios.html" class="menu-item">
+                <i class="fa-solid fa-chart-line"></i><span>Relatórios</span>
+              </a>
+            </li>
+            <li>
+              <a href="usuarios.html" class="menu-item">
+                <i class="fa-solid fa-gear"></i><span>Usuários</span>
+              </a>
+            </li>
+            <li>
+              <a href="login.html" class="menu-item logout">
+                <i class="fa-solid fa-right-from-bracket"></i><span>Sair</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main class="main-content">
+        <h1>Cadastro de Produtos</h1>
+        <p class="subtitle">
+          Preencha os campos abaixo para adicionar um novo produto.
+        </p>
+
+        <form class="product-form" action="/cadastrar-produto" method="post">
+          <label for="nome">Nome</label>
+          <input
+            type="text"
+            id="nome"
+            name="descricao"
+            placeholder="Digite o nome do produto"
+            required
+          />
+
+          <label for="quantidade">Quantidade</label>
+          <input
+            type="number"
+            id="quantidade"
+            name="quantidade"
+            placeholder="0"
+            required
+          />
+
+          <label for="categoria">Categoria</label>
+          <select id="categoria" name="categoria" required>
+            <option value="">Selecione uma opção</option>
+            <option value="bebidas">Bebidas</option>
+            <option value="alimentos">Alimentos</option>
+            <option value="higiene">Higiene</option>
+            <option value="outros">Outros</option>
+          </select>
+
+          <label for="preco">Preço</label>
+          <input
+            type="number"
+            id="preco"
+            name="preco"
+            placeholder="R$ 0,00"
+            step="0.01"
+            required
+          />
+
+          <div class="buttons">
+            <button type="reset" class="btn-clear">Cancelar</button>
+            <button type="submit" class="btn-save">Salvar</button>
+          </div>
+        </form>
+
+        <section class="product-list">
+          <h2>Produtos Cadastrados</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Categoria</th>
+                <th>Estoque</th>
+                <th>Preço</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Refrigerante</td>
+                <td>Bebidas</td>
+                <td>50</td>
+                <td>R$ 7,50</td>
+              </tr>
+              <tr>
+                <td>Sabonete</td>
+                <td>Higiene</td>
+                <td>120</td>
+                <td>R$ 3,20</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <footer class="main-footer">
+          © 2025 PeqSystem. Todos os direitos reservados.
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeqSystem - Login</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="login.css">
+    </head>
+
+<body>
+
+    <div class="login-container">
+        
+        <div class="logo-area">
+            <img class="login-logo" src="imagens/logo-oficial.png" alt="Logo PeqSystem">
+            </div>
+
+        <form class="login-form" action="/login" method="POST">
+            <label for="usuario">Usuário</label>
+            <input type="text" id="usuario" name="usuario" placeholder="Digite seu usuário" required>
+
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+
+            <button type="submit" class="btn-login">Entrar</button>
+            <button type="button" class="btn-exit">Sair</button>
+
+            <a href="#" class="forgot-password">Esqueci minha senha ⚠️</a>
+        </form>
+
+        <p class="footer">© 2025 PeqSystem. Todos os direitos reservados.</p>
+
+    </div>
+
+</body>
+</html>
